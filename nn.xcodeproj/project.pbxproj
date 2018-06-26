@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7EC33F20E20ED7002CF96D /* NewClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EC33E20E20ED7002CF96D /* NewClass.m */; };
+		CE7EC34220E22929002CF96D /* NewClass2.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7EC34120E22929002CF96D /* NewClass2.m */; };
 		CE97758920DD2DB5004A84F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97758820DD2DB5004A84F2 /* AppDelegate.m */; };
 		CE97758C20DD2DB5004A84F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE97758B20DD2DB5004A84F2 /* ViewController.m */; };
 		CE97758F20DD2DB5004A84F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE97758D20DD2DB5004A84F2 /* Main.storyboard */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE7EC33D20E20ED7002CF96D /* NewClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewClass.h; sourceTree = "<group>"; };
+		CE7EC33E20E20ED7002CF96D /* NewClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewClass.m; sourceTree = "<group>"; };
+		CE7EC34020E22929002CF96D /* NewClass2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewClass2.h; sourceTree = "<group>"; };
+		CE7EC34120E22929002CF96D /* NewClass2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewClass2.m; sourceTree = "<group>"; };
 		CE97758420DD2DB5004A84F2 /* nn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97758720DD2DB5004A84F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE97758820DD2DB5004A84F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 				CE97759220DD2DB7004A84F2 /* LaunchScreen.storyboard */,
 				CE97759520DD2DB7004A84F2 /* Info.plist */,
 				CE97759620DD2DB7004A84F2 /* main.m */,
+				CE7EC33D20E20ED7002CF96D /* NewClass.h */,
+				CE7EC33E20E20ED7002CF96D /* NewClass.m */,
+				CE7EC34020E22929002CF96D /* NewClass2.h */,
+				CE7EC34120E22929002CF96D /* NewClass2.m */,
 			);
 			path = nn;
 			sourceTree = "<group>";
@@ -142,8 +152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE97758C20DD2DB5004A84F2 /* ViewController.m in Sources */,
+				CE7EC33F20E20ED7002CF96D /* NewClass.m in Sources */,
 				CE97759720DD2DB7004A84F2 /* main.m in Sources */,
 				CE97758920DD2DB5004A84F2 /* AppDelegate.m in Sources */,
+				CE7EC34220E22929002CF96D /* NewClass2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

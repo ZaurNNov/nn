@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "NewClass.h"
+#import "NewClass2.h"
 
 ///////////////////////////////////////// Protocol name
 @protocol MyProtocolIsDelegateMethod
@@ -65,6 +66,8 @@
 @interface ViewController() <MyProtocolIsDelegateMethod>
 
 -(void)secretMethod;
+@property (nonatomic, copy) NSArray *mutArr1;
+@property (nonatomic) NSArray *mutArr2;
 
 @end
 
@@ -73,7 +76,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self newPoligin];
+    //[self newPoligin];
+    /*
     [self viewDiDDiDDiDnotLoad];
     
     [self print42];
@@ -84,10 +88,46 @@
     if ([self respondsToSelector:@selector(print22)]) {
         [self print22]; // optional method
     }
+     */
+    
+    [self newExample];
+}
+
+-(void)newExample {
+    
+    NewClass *a1 = [[NewClass alloc] init];
+    NSLog(@"%@", a1);
+    
+    a1.string1 = @"NSString *string1";
+    a1.string2Copy = @"NSString *string2Copy";
+    a1.array1 = @[@"one", @"two", @"three"];
+    a1.array2Copy = @[@"nine", @"eight", @"seven"];
+    NSLog(@"%@", a1);
+    
+    NewClass *a2 = [[NewClass alloc] initWithData];
+    
+    NewClass2 *class2Obj = [[NewClass2 alloc] init];
+    class2Obj.name = @"Ivan";
+    
+    a1.class2Object = class2Obj;
+//    NewClass *b1 = [a1 copy];
+    a2 = a1;
+    
+    //NewClass *b1 = [a1 copy];
+    //a2 = a1.copy;
+    /* *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[NewClass copyWithZone:]: unrecognized selector sent to instance 0x600000253830'
+     */
+
+    NSLog(@"%@", a2);
+    a2.array2Copy = [a1.array1 arrayByAddingObject:@"kyky"];
+    a1.array1 = [a2.array2Copy arrayByAddingObject:@"mumu"];
+    
+    NSLog(@"%@", a2);
+    
 }
 
 -(void) newPoligin {
-    
+    /*
     NSObject *one = [[NSObject alloc] init];
     
     // call self ext. methods
@@ -96,6 +136,10 @@
     
     // private method
     [self secretMethod];
+    
+     */
+    // arrays examples
+    [self arraysExamples];
 }
 
 -(void)secretMethod {
@@ -131,6 +175,43 @@
 }
 */
 
+-(void)arraysExamples {
+    
+//    @property (nonatomic, copy) NSMutableArray *mutArr1;
+//    @property (nonatomic) NSMutableArray *mutArr2;
+    
+    NSArray *arr = @[@"111", @"222", @"333", @"444"];
+    NSArray *arr2 = @[@"999", @"888", @"777"];
+    
+//    // print
+//    [self printArray:self.mutArr1];
+//    [self printArray:self.mutArr2];
+    
+    self.mutArr1 = [NSArray arrayWithArray:arr];
+    self.mutArr2 = [NSArray arrayWithArray:arr];
+
+    NSMutableArray *arr3 = self.mutArr1;
+    NSMutableArray *arr4 = self.mutArr2;
+    
+    self.mutArr1 = nil;
+    self.mutArr2 = nil;
+    
+
+    self.mutArr1 = [NSArray arrayWithArray:arr2];
+    self.mutArr2 = [NSArray arrayWithArray:arr2];
+    
+    int a = 4;
+    // print
+    [self printArray:arr3];
+    [self printArray:arr4];
+}
+
+-(void)printArray:(NSArray *)array {
+//    NSLog(@"%@", [array description]);
+    for (int i = 0; i < array.count; i++) {
+        NSLog(@"%@ Array[%d]=%@", NSStringFromSelector(_cmd), i, array[i]);
+    }
+}
 
 @end
 

@@ -90,7 +90,8 @@
     }
      */
     
-    [self newExample];
+//    [self newExample];
+    [self archiveUnarchive];
 }
 
 -(void)newExample {
@@ -122,6 +123,19 @@
     a2.array2Copy = [a1.array1 arrayByAddingObject:@"kyky"];
     a1.array1 = [a2.array2Copy arrayByAddingObject:@"mumu"];
     
+    NSLog(@"%@", a2);
+    
+}
+
+-(void)archiveUnarchive {
+    
+    NSString *fileName = @"myFile.plist";
+    NewClass2 *a1 = [[NewClass2 alloc] initWithName:@"Supername"];
+    NSLog(@"%@", a1);
+    [a1 archiveMyPropertyAs:fileName];
+    
+    NewClass2 *a2 = [[NewClass2 alloc] init];
+    [a2 unarchiveMyPropertyFrom:fileName];
     NSLog(@"%@", a2);
     
 }

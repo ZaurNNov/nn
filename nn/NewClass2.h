@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NewClass2 : NSObject <NSCopying>
+@interface NewClass2 : NSObject <NSCopying, NSCoding>
 
 @property (nonatomic, strong) NSString *name;
+
+-(id)initWithName: (NSString *)name;
+
+-(void)archiveMyPropertyAs:(NSString *)saveDataName;
+-(id)unarchiveMyPropertyFrom:(NSString *)saveDataName;
 
 @end

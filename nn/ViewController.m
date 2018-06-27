@@ -130,14 +130,13 @@
 -(void)archiveUnarchive {
     
     NSString *fileName = @"myFile.plist";
-    NewClass2 *a1 = [[NewClass2 alloc] initWithName:@"Supername"];
-    NSLog(@"%@", a1);
+    NewClass2 *a1 = [[NewClass2 alloc] initWithName:@"Superman"];
     [a1 archiveMyPropertyAs:fileName];
     
-    NewClass2 *a2 = [[NewClass2 alloc] init];
+    NewClass2 *a2 = [[NewClass2 alloc] initWithName:@"Batman"];
     [a2 unarchiveMyPropertyFrom:fileName];
-    NSLog(@"%@", a2);
     
+    NSLog(@"%@ vs %@", a1, a2);
 }
 
 -(void) newPoligin {
